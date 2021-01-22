@@ -8,16 +8,37 @@ import ProductList from "./components/ProductList";
 import Details from "./components/Details";
 import Cart from "./components/Cart";
 import Default from "./components/Default";
+import SignIn from "./components/Login";
+import SignUp from "./components/SignUp";
+import Home from "./components/Home";
 
 export default class App extends Component {
+  handleUser = (userData) => {
+    localStorage.setItem("user_id", userData.id);
+    localStorage.setItem("username", userData.name);
+  };
+
   render() {
     return (
       <React.Fragment>
         <Navbar />
         <Switch>
-          <Route exact path="/" component={ProductList} />
+          <Route exact path="/" component={Home} />
+          <Route path="/home" component={ProductList} />
           <Route path="/details" component={Details} />
           <Route path="/cart" component={Cart} />
+          <Route
+            path="/signup"
+            component={(props) => (
+              <SignUp {...props} handleUser={this.handleUser} />
+            )}
+          />
+          <Route
+            path="/login"
+            component={(props) => (
+              <SignIn {...props} handleUser={this.handleUser} />
+            )}
+          />
           <Route component={Default} />
         </Switch>
       </React.Fragment>
