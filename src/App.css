@@ -45,6 +45,7 @@ body {
 
 .home {
   margin-top: 10%;
+  padding-top: 10px;
   height: 20rem;
   background: #c89f9c;
   overflow: hidden;

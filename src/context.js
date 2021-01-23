@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { exampleProduct } from "./dataExample";
+// import { exampleProduct } from "./dataExample";
 
 const ProductContext = React.createContext();
 
@@ -37,7 +37,7 @@ class ProductProvider extends Component {
     //create a temporary variable to hold the state, and then using indexOf() method we can get the product with the specific id
     const index = tempProducts.indexOf(this.getItem(id));
     const product = tempProducts[index];
-    // product.in_cart = true;
+    product.in_cart = true;
     // product.quantity -= 1;
     this.setState(
       () => {
@@ -48,6 +48,7 @@ class ProductProvider extends Component {
       }
     );
   };
+
   increment = (id) => {
     console.log("increment method");
   };
@@ -61,6 +62,7 @@ class ProductProvider extends Component {
 
     const index = tempProducts.indexOf(this.getItem(id));
     let removedProduct = tempProducts[index];
+    removedProduct.in_cart = false;
     this.setState(
       () => {
         return {
@@ -77,6 +79,8 @@ class ProductProvider extends Component {
     this.setState(() => {
       return { cart: [] };
     }, this.addTotals());
+    window.location.reload();
+    //reload for changing the state of the in_cart items
   };
   addTotals = () => {
     let subTotal = 0;
