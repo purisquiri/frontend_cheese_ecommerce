@@ -6,6 +6,8 @@ import { ProductConsumer } from "../../context";
 import CartList from "./CartList";
 import CartTotals from "./CartTotals";
 
+const username = localStorage.getItem("username");
+
 export default class Cart extends Component {
   render() {
     return (
@@ -16,7 +18,8 @@ export default class Cart extends Component {
             if (cart.length > 0) {
               return (
                 <React.Fragment>
-                  <Title name="User" title="Cart" />
+                  <br></br>
+                  <Title name={username} title="Cart" />
                   <CartColumns />
                   <CartList value={value} />
                   <CartTotals value={value} history={this.props.history} />

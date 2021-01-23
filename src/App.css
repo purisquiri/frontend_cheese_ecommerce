@@ -7,6 +7,7 @@
 }
 body {
   font-family: "Oswald", sans-serif !important;
+  padding-top: 100px;
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important;
 }
@@ -44,9 +45,9 @@ body {
 /* Home */
 
 .home {
-  margin-top: 10%;
+  margin-top: 20%;
   padding-top: 10px;
-  height: 20rem;
+  height: 300px;
   background: #c89f9c;
   overflow: hidden;
 }
@@ -86,4 +87,17 @@ body {
   50% {
     border-color: orange;
   }
+}
+
+/* footer */
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #b36a5e;
+  line-height: 1.6;
+  color: white;
+  text-align: center;
+  box-shadow: inset 0px 0px 4px #000000;
 }
