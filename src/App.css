@@ -7,6 +7,7 @@
 }
 body {
   font-family: "Oswald", sans-serif !important;
+  padding-top: 100px;
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important;
 }
@@ -39,4 +40,64 @@ body {
   cursor: pointer;
   font-size: 1.2rem;
   color: var(--mainYellow);
+}
+
+/* Home */
+
+.home {
+  margin-top: 20%;
+  padding-top: 10px;
+  height: 300px;
+  background: #c89f9c;
+  overflow: hidden;
+}
+
+.homein {
+  height: 150%;
+  display: flex;
+  justify-content: center;
+}
+/* DEMO-SPECIFIC STYLES */
+.typewriter h4 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  line-height: 1.6;
+  /*border-right: 0.15em solid orange;  The typwriter cursor */
+  white-space: nowrap; /*Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  /*letter-spacing: 0.15em; Adjust as needed */
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+/* footer */
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #b36a5e;
+  line-height: 1.6;
+  color: white;
+  text-align: center;
+  box-shadow: inset 0px 0px 4px #000000;
 }
