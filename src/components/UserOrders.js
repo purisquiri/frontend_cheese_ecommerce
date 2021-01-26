@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import YourOrders from "./YourOrders";
 import OrderColumns from "./OrderColumns";
 import Title from "./Title";
+import { ProductConsumer } from "../context";
 
 const token = localStorage.getItem("token");
 const userId = localStorage.getItem("user_id");
@@ -50,6 +51,13 @@ export default class UserOrders extends Component {
         {this.state.pastOrders.map((order) => {
           return <YourOrders key={order.id} order={order} />;
         })}
+        {/* <ProductConsumer>
+          {(value) => {
+            return value.products.map((product) => {
+              return <YourOrders key={product.id} product={product} />;
+            });
+          }}
+        </ProductConsumer> */}
       </div>
     );
   }
