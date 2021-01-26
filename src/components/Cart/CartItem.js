@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function CartItem({ item, value }) {
-  const { id, title, image, price } = item;
+  const { id, title, image, price, count, total } = item;
   const { increment, decrement, removeItem } = value;
   return (
     <div className="row my-2 text-capitilaize text-center">
@@ -26,7 +26,7 @@ export default function CartItem({ item, value }) {
           <span className="btn btn-black mx-1" onClick={() => decrement(id)}>
             -
           </span>
-          <span className="btn btn-black mx-1">1</span>
+          <span className="btn btn-black mx-1">{count}</span>
           {/* I have to build the count method */}
           <span className="btn btn-black mx-1" onClick={() => increment(id)}>
             +
@@ -40,7 +40,7 @@ export default function CartItem({ item, value }) {
         </div>
       </div>
       <div className="col-10 mx-auto col-lg-2">
-        <strong>item total : $ {price} </strong>
+        <strong>item total : $ {total} </strong>
       </div>
     </div>
   );

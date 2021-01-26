@@ -18,7 +18,8 @@ export default class Cart extends Component {
             if (cart.length > 0) {
               return (
                 <React.Fragment>
-                  <br></br>
+                  <br />
+                  <br />
                   <Title name={username} title="Cart" />
                   <CartColumns />
                   <CartList value={value} />

@@ -5,7 +5,7 @@ const Logout = () => {
   const returnHome = () => {
     localStorage.clear();
     history.push("/");
-    window.location.reload();
+    //window.location.reload();
   };
 
   const history = useHistory();

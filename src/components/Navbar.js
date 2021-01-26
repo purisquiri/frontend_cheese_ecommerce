@@ -66,4 +66,10 @@ const NavWrapper = styled.nav`
     font-size: 1.5rem;
     text-transform: capitalize;
   }
+  .navbar-brand {
+    transition: all 0.5s linear;
+  }
+  .navbar-brand:hover {
+    transform: scale(1.1);
+  }
 `;
