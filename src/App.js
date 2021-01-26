@@ -12,12 +12,23 @@ import Default from "./components/Default";
 import SignIn from "./components/Login";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
+import UserOrders from "./components/UserOrders";
 
 export default class App extends Component {
+  // state = {
+  //   orderSumary: "",
+  // };
+
   handleUser = (userData) => {
     localStorage.setItem("user_id", userData.id);
     localStorage.setItem("username", userData.name);
   };
+  // orderSumary = (e) => {
+  //   e.preventDefault();
+  //   console.log(e);
+  //   this.setState({ orderSumary: e });
+  //   console.log(this.state.orderSumary);
+  // };
 
   render() {
     return (
@@ -25,9 +36,16 @@ export default class App extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/user" component={UserOrders} />
           <Route path="/home" component={ProductList} />
           <Route path="/details" component={Details} />
           <Route path="/cart" component={Cart} />
+          {/* <Route
+            path="/cart"
+            component={(props) => (
+              <Cart {...props} orderSumary={this.orderSumary} />
+            )}
+          /> */}
           <Route
             path="/signup"
             component={(props) => (

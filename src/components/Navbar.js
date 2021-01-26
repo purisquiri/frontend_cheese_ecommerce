@@ -20,22 +20,41 @@ export default class Navbar extends Component {
         <Link to="/home">
           <img src={logo} alt="store" className="navbar-brand" />
         </Link>
-        <ul className="navbar-nav align-items-center">
-          <li className="nav-item ml-5">
-            <Link to="/home" className="nav-link">
-              go to store
-            </Link>
-          </li>
-          {/* <li className="nav-item ml-5">Welcome: {username}</li> */}
-        </ul>
-        <Link to="/cart" className="ml-auto">
+        {/* <ul className="navbar-nav align-items-center"> */}
+        {/* <li className="nav-item ml-5"> */}
+        <Link to="/home" className="nav-link">
           <ButtonContainer>
             <span className="mr-1">
-              {this.state.username} cart
+              store
+              <i className="fas fa-store"></i>
+            </span>
+          </ButtonContainer>
+        </Link>
+        {/* </li> */}
+        {/* <li className="nav-item ml-5"> */}
+        <Link to="/user" className="ml-auto">
+          <ButtonContainer>
+            <span className="mr-1">
+              History
+              <i className="fas fa-user-tie" />
+            </span>
+          </ButtonContainer>
+        </Link>
+        {/* </li> */}
+        {/* <li className="nav-item ml-5">Welcome: {username}</li> */}
+        {/* <li className="nav-item ml-5"> */}
+        <Link to="/cart" className="nav-link">
+          <ButtonContainer>
+            <span className="mr-1">
+              cart
+              {/* cart */}
               <i className="fas fa-cart-plus" />
             </span>
           </ButtonContainer>
         </Link>
+        {/* </li> */}
+        {/* </ul> */}
+
         <Link to="/signup" className="ml-auto">
           <ButtonContainer>
             <span className="mr-1">
@@ -44,7 +63,8 @@ export default class Navbar extends Component {
             </span>
           </ButtonContainer>
         </Link>
-        <Link to="/home" className="ml-auto">
+
+        <Link to="/home" className="nav-link">
           <ButtonContainer onClick={() => this.setState({ logout: true })}>
             <span className="mr-1">
               Logout
@@ -52,6 +72,7 @@ export default class Navbar extends Component {
             </span>
           </ButtonContainer>
         </Link>
+
         {this.state.logout === true ? <Logout /> : null}
       </NavWrapper>
     );
@@ -65,5 +86,11 @@ const NavWrapper = styled.nav`
     color: var(--mainWhite) !important;
     font-size: 1.5rem;
     text-transform: capitalize;
+  }
+  .navbar-brand {
+    transition: all 0.5s linear;
+  }
+  .navbar-brand:hover {
+    transform: scale(1.1);
   }
 `;

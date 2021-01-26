@@ -1,9 +1,30 @@
 import React from "react";
 //import { Link } from "react-router-dom";
 import PayPalButton from "./PayPalButton";
+const userId = localStorage.getItem("user_id");
+const token = localStorage.getItem("token");
 
-export default function CartTotals({ value, history }) {
-  const { cartSubTotal, cartTax, cartTotal, clearCart } = value;
+export default function CartTotals({ value, history, orderSumary }) {
+  const { cartSubTotal, cartTax, cartTotal, clearCart, cart } = value;
+
+  const saveOrder = () => {
+    fetch("http://localhost:3000/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        user_id: userId,
+        total_price: cartTotal,
+        order_items: cart.map((item) => {
+          return { product_id: item.id, count: item.count };
+        }),
+      }),
+    });
+  };
+
   return (
     <React.Fragment>
       <div className="container">
@@ -34,6 +55,7 @@ export default function CartTotals({ value, history }) {
               total={cartTotal}
               clearCart={clearCart}
               history={history}
+              saveOrder={saveOrder}
             />
           </div>
         </div>
