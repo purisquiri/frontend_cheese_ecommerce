@@ -30,14 +30,14 @@ export default class Details extends Component {
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                   {/* <h2>quantity Available: {quantity}</h2> */}
                   <h4 className="text-capitalize text-muted mt-3 mb-2">
-                    (1.30lb aprox per piece on-line )
+                    (1.30lb aprox per piece )
                   </h4>
                   <h4 className="text-blue">
                     price : <span>$</span>
                     {price.toFixed(2)}
                   </h4>
                   <p className="text-capitalize text-muted font-weight-bold mt-3 mb-0">
-                    descripion:
+                    description:
                   </p>
                   <p className="text-muted lead">{description}</p>
                   <div>
