@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CartColumns() {
   return (
-    <div className="conatiner-fluid text-center d-none d-large d-lg-block">
+    <div className="container-fluid text-center d-none d-large d-lg-block">
       <div className="row">
         <div className="col-10 mx-auto col-lg-2">
           <p className="text-uppercase badge badge-secondary text-wrap">date</p>
@@ -12,7 +12,7 @@ export default function CartColumns() {
             total payment
           </p>
         </div>
-        <div className="col-10 mx-auto col-lg-8 ">
+        <div className="col-10 mx-auto col-lg-6 ">
           <p className="text-uppercase badge badge-secondary text-wrap">
             product names
           </p>

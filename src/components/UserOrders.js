@@ -52,13 +52,6 @@ export default class UserOrders extends Component {
         {this.state.pastOrders.map((order) => {
           return <YourOrders key={order.id} order={order} />;
         })}
-        {/* <ProductConsumer>
-          {(value) => {
-            return value.products.map((product) => {
-              return <YourOrders key={product.id} product={product} />;
-            });
-          }}
-        </ProductConsumer> */}
       </div>
     );
   }
