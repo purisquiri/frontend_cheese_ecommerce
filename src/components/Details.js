@@ -15,7 +15,6 @@ export default class Details extends Component {
             price,
             title,
             in_cart,
-            quantity,
           } = value.detailProduct;
           return (
             <div className="container py-5">
@@ -35,7 +34,7 @@ export default class Details extends Component {
                   </h4>
                   <h4 className="text-blue">
                     price : <span>$</span>
-                    {price}
+                    {price.toFixed(2)}
                   </h4>
                   <p className="text-capitalize text-muted font-weight-bold mt-3 mb-0">
                     descripion:

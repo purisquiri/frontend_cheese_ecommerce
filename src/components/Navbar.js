@@ -41,7 +41,6 @@ export default class Navbar extends Component {
           </ButtonContainer>
         </Link>
         {/* </li> */}
-        {/* <li className="nav-item ml-5">Welcome: {username}</li> */}
         {/* <li className="nav-item ml-5"> */}
         <Link to="/cart" className="nav-link">
           <ButtonContainer>
@@ -73,6 +72,11 @@ export default class Navbar extends Component {
           </ButtonContainer>
         </Link>
 
+        <div className="nav-item ml-5 text-title">
+          {this.state.username ? (
+            <div>Welcome {this.state.username}</div>
+          ) : null}
+        </div>
         {this.state.logout === true ? <Logout /> : null}
       </NavWrapper>
     );
@@ -83,7 +87,7 @@ const NavWrapper = styled.nav`
   background: var(--mainBlue);
   box-shadow: 2px 2px 4px #000000;
   .nav-link {
-    color: var(--mainWhite) !important;
+    // color: var(--mainWhite) !important;
     font-size: 1.5rem;
     text-transform: capitalize;
   }

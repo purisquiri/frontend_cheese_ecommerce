@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import YourOrders from "./YourOrders";
 import OrderColumns from "./OrderColumns";
 import Title from "./Title";
-import { ProductConsumer } from "../context";
 
 const token = localStorage.getItem("token");
 const userId = localStorage.getItem("user_id");
@@ -44,7 +43,9 @@ export default class UserOrders extends Component {
           <OrderColumns />
         ) : (
           <div className="text-center text-title">
-            Login or create an account
+            you do not have past orders <br />
+            <br />
+            <i className="far fa-sad-tear" style={{ fontSize: "30px" }}></i>
           </div>
         )}
 
