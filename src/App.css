@@ -1,6 +1,6 @@
 :root {
-  --mainBlue: #b36a5e;
-  --lightBlue: #c89f9c;
+  --mainOrange: #b36a5e;
+  --lightOrange: #c89f9c;
   --mainWhite: #eee2df;
   --mainDark: rgb(66, 75, 86);
   --mainYellow: steelblue;
@@ -17,10 +17,10 @@ body {
   text-transform: uppercase;
 }
 .text-blue {
-  color: var(--mainBlue);
+  color: var(--mainOrange);
 }
 .text-bright {
-  color: var(--lightBlue);
+  color: var(--lightOrange);
 }
 
 .btn-black {

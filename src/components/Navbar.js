@@ -84,7 +84,7 @@ export default class Navbar extends Component {
 }
 
 const NavWrapper = styled.nav`
-  background: var(--mainBlue);
+  background: var(--mainOrange);
   box-shadow: 2px 2px 4px #000000;
   .nav-link {
     // color: var(--mainWhite) !important;
